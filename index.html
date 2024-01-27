@@ -1,0 +1,62 @@
+<html>
+<head><title>Form validation</title>
+<script type="text/javascript">
+function validate(){
+var name=document.f1.n1.value;
+var password=document.f1.n2.value;
+var confi=document.f1.n3.value;
+if(name == null || name == ""){
+alert("Enter valid username");
+return false;
+}
+else if(password == "" || password == null || password.length<6){
+alert("enter valid password");
+return false;
+}
+else if(confi!=password){
+alert("Invalid password");
+return false;
+}
+}
+</script>
+<style type="text/css">
+.pr{
+      width:500px;
+      heigth:500px;
+      background-color:pink;
+      padding:40px;
+      position:center;
+}
+</style>
+</head>
+<body align="center" bgcolor="cyan"><center>
+<h1><u><b>Registration Form</b></u></h1>
+<form name="f1"  method="post" onsubmit= " return validate()" action="k.html" class="pr">
+<label>Username:</label>
+<input  type="text" name="n1" placeholder="username" ><br><br>
+<label>Password:</label>
+<input type="password"  name="n2" placeholder="password"><br><br>
+<label>Confirm Password:</label>
+<input type="password" name="n3" placeholder="Confirm password" ><br><br>
+<label>Branch</label>
+<select name="branch" id="branch" required>
+  <option value="select">select</option>
+  <option value="cse">cse</option>
+  <option value="it">It</option>
+  <option value="mech">Mech</option>
+  <option value="ece">Ece</option>
+</select><br><br>
+<label>DOB</label>
+<input type="date" name="dob"><br><br>
+<label>Email</label>
+<input type="text" name="gmail" pattern="[a-zA-Z0-9\-.]+@[a-zA-Z0-9]+\.[a-z]{1,8}$" required><br><br>
+<label>Phone number</label>
+<input type="text" pattern="^[6-9]+[0-9]{9}" required><br><br>
+<label>Gender:</label>
+<input type="radio" name="r1">Male<input type ="radio" name="r1" >Female<br><br>
+<button type="submit" style="color:blue"> Submit</button>
+<h2>havent registered yet click here to register</h2>
+<button>register</button>
+</form></center>
+</body>
+</html>
